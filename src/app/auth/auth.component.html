@@ -13,4 +13,13 @@
   <p>
     <button>Login</button>
   </p>
+
 </form>
+
+@if (this.activePermission() === 'guest') {
+<p>You are not authenticated</p>
+} @else if (activePermission() === 'user') {
+<p>You are authenticated as user</p>
+} @else {
+<p>You are authenticated as admin</p>
+}

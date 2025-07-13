@@ -10,12 +10,15 @@ import { AuthService } from './auth.service';
   templateUrl: './auth.component.html',
   styleUrl: './auth.component.css',
 })
+
 export class AuthComponent {
   email = signal('');
   password = signal('');
   private authService = inject(AuthService);
+  activePermission = this.authService.activePermission;
 
   onSubmit() {
+    console.log('onSubmit', this.email(), this.password());
     this.authService.authenticate(this.email(), this.password());
   }
 }
