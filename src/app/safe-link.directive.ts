@@ -15,7 +15,7 @@ import { Directive, Input } from '@angular/core';
 export class SafeLinkDirective {
   // default url parameter value
   // set alias as appSafeLink so that we can use it as an attribute in the template
-  @Input('appSafeLink') queryParams: string = 'utm_source=angular-course'; 
+  @Input({alias: 'appSafeLink'}) queryParams: string = 'utm_source=angular-course'; 
 
   constructor() {
     console.log('SafeLinkDirective is active');

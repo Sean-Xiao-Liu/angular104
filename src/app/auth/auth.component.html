@@ -16,10 +16,28 @@
 
 </form>
 
-@if (this.activePermission() === 'guest') {
+<!-- @if (this.activePermission() === 'guest') {
 <p>You are not authenticated</p>
 } @else if (activePermission() === 'user') {
 <p>You are authenticated as user</p>
 } @else {
 <p>You are authenticated as admin</p>
-}
+} -->
+<!-- <ng-template appAuth="guest">
+  <p>You are not authenticated</p>
+</ng-template>
+
+<ng-template appAuth="user">
+  <p>You are authenticated as user</p>
+</ng-template>
+
+<ng-template appAuth="admin">
+  <p>You are authenticated as admin</p>
+</ng-template> -->
+
+<!-- *appAuth="'guest'" is a structural directive, 
+ which means it will create a template and render it into the dom
+ it is same as using ng-template and appAuth directive together -->
+<p *appAuth="'guest'">You are not authenticated</p>
+<p *appAuth="'user'">You are authenticated as user</p>
+<p *appAuth="'admin'">You are authenticated as admin</p>
